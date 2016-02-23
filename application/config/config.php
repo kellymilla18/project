@@ -16,7 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/web';
+$config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/project';
 
 /*
 |--------------------------------------------------------------------------
