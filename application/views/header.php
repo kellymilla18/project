@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div ="header">
+    <div>
         <ul class="navbar-default">
             <li style="padding: 10px"><a href="<?php echo base_url('index.php/program/list_of_programs'); ?>"> Programs </a></li>
             <li style="padding: 10px"><a href="<?php echo base_url('index.php/course/list_of_courses'); ?>"> Courses </a></li>

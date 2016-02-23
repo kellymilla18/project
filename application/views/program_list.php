@@ -19,10 +19,7 @@
                     <button class="btn btn-default" style="width: 20px" data-toggle="modal" data-target="#addCurr<?php echo $program_code; ?>"><i style="left:-7px" class="glyphicon glyphicon-plus"></i></button>
                 </div>
                 <div style="padding: 0px 20px 20px 20px">
-                    <table data-toggle="table" data-toolbar="#leaderboard-controls"
-                       data-url="<?php echo base_url("index.php/json/getcurriculums/$program_code"); ?>"
-                       data-pagination="false" data-page-list="[5, 10, 20, 50, 100, 200, 500]"
-                       data-search="false" data-show-refresh="false">
+                    <table data-toggle="table" data-toolbar="#leaderboard-controls" data-url="<?php echo base_url(" index.php/json/getcurriculums/$program_code "); ?>" data-pagination="false" data-page-list="[5, 10, 20, 50, 100, 200, 500]" data-search="false" data-show-refresh="false">
                         <thead>
                             <tr>
                                 <th data-field="curriculum_year" data-sortable="false" data-align="center" class="col-lg-5 col-sm-5">Curriculum Year</th>
@@ -36,7 +33,7 @@
             </div>
 
             <div class="modal fade" id="addCurr<?php echo $program_code; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <form method="POST" action="<?php echo base_url("index.php/curriculum/add_curriculum/$program_code"); ?>">
+                <form method="POST" action="<?php echo base_url(" index.php/curriculum/add_curriculum/$program_code "); ?>">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
