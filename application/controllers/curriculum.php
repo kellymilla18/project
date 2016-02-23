@@ -9,6 +9,7 @@ class Curriculum extends CI_Controller {
 		$curriculum_id = $this->curriculum_model->getCurriculumID($program_id, $curriculum_year);
 		$program_data = $this->program_model->getProgramData($program_id);
 
+		$data['curriculum_id'] = $curriculum_id;
 		$data['program_name'] = $program_data->program_name;
 		$data['program_id'] = $program_id;
 		$data['program_code'] = $program_code;

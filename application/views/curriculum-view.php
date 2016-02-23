@@ -21,6 +21,10 @@
   	?>
             <div role="tabpanel" class="tab-pane <?php if($x == 1) echo " active "; ?>" id="tab<?php echo $x; ?>">
                 <div style="margin-top: 50px">
+
+                    <button class="btn btn-default" style="width: 115px" data-toggle="modal" data-target="#myModal<?php echo $x; ?>">
+                        <i class="glyphicon glyphicon-plus" style="left: -3px;"></i> Add Subject
+                    </button>
                     <div style="padding: 0px 20px 20px 20px">
                         <h4> 1st Semester </h4>
                         <table data-toggle="table" data-toolbar="#leaderboard-controls" data-url="<?php echo base_url("index.php/json/getCurriculumSubjects/$program_code/$curriculum_year/$x/1"); ?>" data-pagination="false" data-page-list="[5, 10, 20, 50, 100, 200, 500]" data-search="false" data-show-refresh="false">
@@ -64,6 +68,39 @@
                     </div>
 
                 </div>
+            </div>
+
+            <div class="modal fade" id="myModal<?php echo $x; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <form method="POST" action="<?php echo base_url('index.php/curriculum_subjects/addSubject'); ?>">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" style="width: 20px" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Add Subject</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <select class="form-control" name="semester">
+                                        <option value="1">1st Semester</option>
+                                        <option value="2">2nd Semester</option>
+                                        <option value="3">Summer</option>
+                                    </select>
+                                </div>
+                                <input type="text" name="curr_year" value="<?php echo $x; ?>" hidden>
+                                <input type="text" name="curriculum_id" value="<?php echo $curriculum_id; ?>" hidden>
+                                <div class="form-group"> 
+                                    <input class="form-control" name="subj_code" placeholder="Subject Code">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <center>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary" value="Add">Add</button>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
             <?php } ?>
     </div>
