@@ -23,7 +23,7 @@
                 <div style="margin-top: 50px">
                     <div style="padding: 0px 20px 20px 20px">
                         <h4> 1st Semester </h4>
-                        <table data-toggle="table" data-toolbar="#leaderboard-controls" data-url="<?php echo base_url(" index.php/json/getCurriculumSubjects/$program_code/$curriculum_year/$x/1 "); ?>" data-pagination="false" data-page-list="[5, 10, 20, 50, 100, 200, 500]" data-search="false" data-show-refresh="false">
+                        <table data-toggle="table" data-toolbar="#leaderboard-controls" data-url="<?php echo base_url("index.php/json/getCurriculumSubjects/$program_code/$curriculum_year/$x/1"); ?>" data-pagination="false" data-page-list="[5, 10, 20, 50, 100, 200, 500]" data-search="false" data-show-refresh="false">
                             <thead>
                                 <tr>
                                     <th data-field="course_code" data-sortable="false" data-align="center" class="col-lg-2 col-sm-5">Subject Code</th>
@@ -37,7 +37,7 @@
 
                     <div style="padding: 0px 20px 20px 20px">
                         <h4> 2nd Semester </h4>
-                        <table data-toggle="table" data-toolbar="#leaderboard-controls" data-url="<?php echo base_url(" index.php/json/getCurriculumSubjects/$program_code/$curriculum_year/$x/2 "); ?>" data-pagination="false" data-page-list="[5, 10, 20, 50, 100, 200, 500]" data-search="false" data-show-refresh="false">
+                        <table data-toggle="table" data-toolbar="#leaderboard-controls" data-url="<?php echo base_url("index.php/json/getCurriculumSubjects/$program_code/$curriculum_year/$x/2"); ?>" data-pagination="false" data-page-list="[5, 10, 20, 50, 100, 200, 500]" data-search="false" data-show-refresh="false">
                             <thead>
                                 <tr>
                                     <th data-field="course_code" data-sortable="false" data-align="center" class="col-lg-2 col-sm-5">Subject Code</th>
@@ -51,7 +51,7 @@
 
                     <div style="padding: 0px 20px 20px 20px">
                         <h4> Summer </h4>
-                        <table data-toggle="table" data-toolbar="#leaderboard-controls" data-url="<?php echo base_url(" index.php/json/getCurriculumSubjects/$program_code/$curriculum_year/$x/3 "); ?>" data-pagination="false" data-page-list="[5, 10, 20, 50, 100, 200, 500]" data-search="false" data-show-refresh="false">
+                        <table data-toggle="table" data-toolbar="#leaderboard-controls" data-url="<?php echo base_url("index.php/json/getCurriculumSubjects/$program_code/$curriculum_year/$x/3"); ?>" data-pagination="false" data-page-list="[5, 10, 20, 50, 100, 200, 500]" data-search="false" data-show-refresh="false">
                             <thead>
                                 <tr>
                                     <th data-field="course_code" data-sortable="false" data-align="center" class="col-lg-2 col-sm-5">Subject Code</th>
