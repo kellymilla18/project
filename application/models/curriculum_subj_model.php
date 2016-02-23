@@ -1,0 +1,10 @@
+<?php
+
+class Curriculum_Subj_Model extends CI_Model {
+	public function getSubjects($curriculum_id, $year, $semester) {
+		$this->db->where('curriculum_id', $curriculum_id);
+		$this->db->where('curr_year', $year);
+		$this->db->where('curr_sem', $semester);
+		return $this->db->get('curr_subjects');
+	}
+}

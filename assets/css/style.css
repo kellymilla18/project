@@ -1,0 +1,54 @@
+body{	
+	margin:0;
+	padding:0;
+	background-color: #fff;
+
+}
+
+.header{
+
+height:8%;
+background-color: #222222;
+  text-align: right;  
+
+}
+.header2{
+
+height:8%;
+
+  text-align: right;  
+  margin-bottom: 5px;
+}
+ a {
+      color: white;
+      font-size: 13pt;
+    }
+
+ ul {
+      padding:20px;   
+  }
+
+ li {
+      display: inline;
+      color:white;
+}
+
+button{
+   margin-top: 20px;
+   margin-left: 20px;
+   width:80px;
+	padding: 10px;
+	background-color: #2ca618;
+	color:white;
+	border-radius: 4px;
+}
+
+input{
+width:350px;
+
+}
+select{
+
+  padding: 8px;
+}
+
