@@ -46,11 +46,9 @@
             text-align: center;
             width: 25%;
         }
-        
         .header {
             text-align: center;
         }
-        
         .division {
             width: 50%;
         }
@@ -95,14 +93,16 @@
                                     <th class='prerequisites'>Prerequisites</th>
                                 </tr>
                                 <?php 
-									for($z = 0; $z < count($subjects[$x][1]); $z++) {
-										echo "<tr>";
-										echo "<td class='course-code'>". $subjects[$x][1][$z]['course_code'] ."</td>";
-										echo "<td class='course-name'>". $subjects[$x][1][$z]['course_name'] ."</td>";
-										echo "<td class='credit-units'>". $subjects[$x][1][$z]['credit_units'] ."</td>";
-										echo "<td class='prerequisites'>". $subjects[$x][1][$z]['prerequisites'] ."</td>";
-										echo "</tr>";
-									}
+                                    if(count($subjects) >= $x && count($subjects[$x]) > 0) {
+    									for($z = 0; $z < count($subjects[$x][1]); $z++) {
+    										echo "<tr>";
+    										echo "<td class='course-code'>". $subjects[$x][1][$z]['course_code'] ."</td>";
+    										echo "<td class='course-name'>". $subjects[$x][1][$z]['course_name'] ."</td>";
+    										echo "<td class='credit-units'>". $subjects[$x][1][$z]['credit_units'] ."</td>";
+    										echo "<td class='prerequisites'>". $subjects[$x][1][$z]['prerequisites'] ."</td>";
+    										echo "</tr>";
+    									}
+                                    }
 								?>
                             </table>
                         </div>
@@ -118,20 +118,22 @@
                                     <th class='prerequisites'>Prerequisites</th>
                                 </tr>
                                 <?php 
-									for($z = 0; $z < count($subjects[$x][2]); $z++) {
-										echo "<tr>";
-										echo "<td class='course-code'>". $subjects[$x][2][$z]['course_code'] ."</td>";
-										echo "<td class='course-name'>". $subjects[$x][2][$z]['course_name'] ."</td>";
-										echo "<td class='credit-units'>". $subjects[$x][2][$z]['credit_units'] ."</td>";
-										echo "<td class='prerequisites'>". $subjects[$x][2][$z]['prerequisites'] ."</td>";
-										echo "</tr>";
-									}
+                                    if(count($subjects) >= $x && count($subjects[$x]) > 1) {
+    									for($z = 0; $z < count($subjects[$x][2]); $z++) {
+    										echo "<tr>";
+    										echo "<td class='course-code'>". $subjects[$x][2][$z]['course_code'] ."</td>";
+    										echo "<td class='course-name'>". $subjects[$x][2][$z]['course_name'] ."</td>";
+    										echo "<td class='credit-units'>". $subjects[$x][2][$z]['credit_units'] ."</td>";
+    										echo "<td class='prerequisites'>". $subjects[$x][2][$z]['prerequisites'] ."</td>";
+    										echo "</tr>";
+									   }
+                                    }
 								?>
                             </table>
                         </div>
                     </td>
                 </tr>
-                <?php if(count($subjects[$x]) > 2) { ?>
+                <?php if(count($subjects) >= $x && count($subjects[$x]) > 2) { ?>
                     <tr>
                         <td colspan="2" style="width: 100%">
                             <div class="summer">

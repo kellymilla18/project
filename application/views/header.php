@@ -6,7 +6,10 @@
     <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/bootstrap-table/bootstrap-table.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/bootstrap-typeahead.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery-ui.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/primitives.js'); ?>"></script>
 
+    <link href="<?php echo base_url('assets/css/primitives.css'); ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-theme.min.css'); ?>">

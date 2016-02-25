@@ -29,4 +29,9 @@ class Course_Model extends CI_Model {
 		$this->db->where('course_code', $course_code);
 		return ($this->db->get('course')->num_rows() != 0);
 	}
+
+	public function getCourseName($course_id) {
+		$this->db->where('course_id', $course_id);
+		return $this->db->get('course')->row()->course_name;
+	}
 }

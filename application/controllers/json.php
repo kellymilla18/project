@@ -90,4 +90,23 @@ class Json extends CI_Controller {
 			$data[$x++] = $course->course_code . ' - ' . $course->course_name;
 		echo json_encode($data);
 	}
+
+	public function getCurriculumData($curriculum_id) {
+		$subjects = $this->curriculum_subj_model->getCurriculumSubjects($curriculum_id);
+		$data = array();
+		$x = 0;
+		foreach ($subjects->result() as $subject) {
+			$data[$x]['id'] = $subject->course_id;
+			$data[$x]['title'] = $this->course_model->getCourseCode($subject->course_id);
+			$data[$x]['name'] = $this->course_model->getCourseName($subject->course_id);
+			$prereqs = $this->prerequisite_model->getPrerequisites($subject->course_id);
+			$y = 0;
+			foreach ($prereqs->result() as $prereq) {
+				$data[$x]['parents'][$y] = $prereq->course_id_pre;
+				$y++;
+			}
+			$x++;
+		}
+		echo json_encode($data);
+	}
 }

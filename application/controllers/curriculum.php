@@ -68,4 +68,19 @@ class Curriculum extends CI_Controller {
 		$pdf = $this->load->view('curriculum-pdf-view', $data, true);
 		$this->htmlpdf->convert($pdf, $program_code, $curriculum_year);
 	}
+
+	public function tree_view($program_code, $curriculum_year) {
+		$program_id = $this->program_model->getProgramID($program_code);
+		$curriculum_id = $this->curriculum_model->getCurriculumID($program_id, $curriculum_year);
+		$program_data = $this->program_model->getProgramData($program_id);
+
+		$data['curriculum_id'] = $curriculum_id;
+		$data['program_name'] = $program_data->program_name;
+		$data['program_id'] = $program_id;
+		$data['curriculum_year'] = $curriculum_year;
+
+		$this->load->view('header');
+		$this->load->view('curr-tree-view', $data);
+		$this->load->view('footer');
+	}
 }
