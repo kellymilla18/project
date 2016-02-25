@@ -23,4 +23,14 @@ class Curriculum_Model extends CI_Model {
 		$this->db->where('curriculum_year', $curriculum_year);
 		return $this->db->get('curriculum')->row()->curriculum_id;
 	}
+
+	public function getProgramID($curriculum_id) {
+		$this->db->where('curriculum_id', $curriculum_id);
+		return $this->db->get('curriculum')->row()->program_id;
+	}
+
+	public function getCurriculumYear($curriculum_id) {
+		$this->db->where('curriculum_id', $curriculum_id);
+		return $this->db->get('curriculum')->row()->curriculum_year;
+	}
 }

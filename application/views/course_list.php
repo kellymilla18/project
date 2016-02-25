@@ -7,7 +7,7 @@
     <button class="btn btn-default" style="width: 115px" data-toggle="modal" data-target="#myModal">
         <i class="glyphicon glyphicon-plus" style="left: -3px;"></i> Add Course
     </button>
-    <table data-toggle="table" data-toolbar="#leaderboard-controls" data-url="<?php echo base_url('index.php/json/getAllCourses'); ?>" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200, 500]" data-search="true" data-show-refresh="false">
+    <table id="course-list-table" data-toggle="table" data-toolbar="#leaderboard-controls" data-url="<?php echo base_url('index.php/json/getAllCourses'); ?>" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200, 500]" data-search="true" data-show-refresh="false">
         <thead>
             <tr>
                 <th data-field="course-code" data-sortable="true" data-align="center" class="col-lg-2 col-sm-2">Subject Code</th>
@@ -20,7 +20,7 @@
 </div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <form method="POST" action="<?php echo base_url('index.php/course/add_course'); ?>">
+    <form id="add-course-form" method="POST">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -37,13 +37,22 @@
                     <div class="form-group">
                         <input class="form-control" type="number" placeholder="Credit Units" name="credit-units" required>
                     </div>
-                    Prerequisites
+                    <label> Prerequisites </label>
+                    <div class="prereq-wrapper">
+                        
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control typeahead-input" data-provide="typeahead" autocomplete="off" data-source='[]' name="subj_code" placeholder="Subject Code">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" id="add-prereq-subj-butt" type="button">Add</button>
+                        </span>
+                    </div>
 
                 </div>
                 <div class="modal-footer">
                     <center>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" value="Add">Add</button>
+                        <button type="button" class="btn btn-primary"  data-dismiss="modal" id="add-course-butt" value="Add">Add</button>
                     </center>
                 </div>
             </div>

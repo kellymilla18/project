@@ -10,10 +10,21 @@ class Json extends CI_Controller {
 		$x = 0;
 
 		foreach ($courses->result() as $course) {
+			$data[$x]['course-id'] = $course->course_id;
 			$data[$x]['course-code'] = $course->course_code;
 			$data[$x]['course-name'] = $course->course_name;
 			$data[$x]['credit-units'] = $course->credit_units;
-			$data[$x]['prerequisites'] = "NONE";
+			$data[$x]['prerequisites'] = "";
+			$prereqs = $this->prerequisite_model->getPrerequisites($course->course_id);
+			$first = true;
+			foreach($prereqs->result() as $prereq) {
+				if(!$first)
+					$data[$x]['prerequisites'] .= ", ";	
+				$data[$x]['prerequisites'] .= $this->course_model->getCourseCode($prereq->course_id_pre);
+				$first = false;
+			}
+			if($prereqs->num_rows() == 0)
+				$data[$x]['prerequisites'] = "NONE";		
 			$x++;
 		}
 
@@ -53,10 +64,30 @@ class Json extends CI_Controller {
 			$data[$x]['course_code'] = $course_data->course_code;
 			$data[$x]['course_name'] = $course_data->course_name;
 			$data[$x]['credit_units'] = $course_data->credit_units;
-			$data[$x]['prerequisites'] = "NONE";
+			$data[$x]['prerequisites'] = "";
+			
+			$prereqs = $this->prerequisite_model->getPrerequisites($subject->course_id);
+			$first = true;
+			foreach($prereqs->result() as $prereq) {
+				if(!$first)
+					$data[$x]['prerequisites'] .= ", ";	
+				$data[$x]['prerequisites'] .= $this->course_model->getCourseCode($prereq->course_id_pre);
+				$first = false;
+			}
+			if($prereqs->num_rows() == 0)
+				$data[$x]['prerequisites'] = "NONE";		
 			$x++;
 		}
 
+		echo json_encode($data);
+	}
+
+	public function getCourseList() {
+		$courses = $this->course_model->getAllCourses();
+		$data = array();
+		$x = 0;
+		foreach($courses->result() as $course)
+			$data[$x++] = $course->course_code . ' - ' . $course->course_name;
 		echo json_encode($data);
 	}
 }

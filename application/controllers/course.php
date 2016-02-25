@@ -15,7 +15,17 @@ class Course extends CI_Controller {
 		$data['course_code'] = $this->input->post('course-code');
 		$data['course_name'] = $this->input->post('course-name');
 		$data['credit_units'] = $this->input->post('credit-units');
-		$this->course_model->addCourse($data);
-		redirect(base_url('index.php/course/list_of_courses'));
+		$course_id = $this->course_model->addCourse($data);
+		$prerequisites = $this->input->post('prerequisites');
+		if($prerequisites != null) {
+			$pre['course_id'] = $course_id;
+			for($x = 0; $x < count($prerequisites); $x++) {
+				$pre['course_id_pre'] = $prerequisites[$x];
+				$this->prerequisite_model->addPrerequisite($pre);
+			}
+		}
+		echo file_get_contents(base_url("index.php/json/getCourseList"));
 	}
+
+	
 }

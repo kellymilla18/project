@@ -14,4 +14,9 @@ class Program_Model extends CI_Model {
 		$this->db->where('program_id', $program_id);
 		return $this->db->get('program')->row();
 	}
+
+	public function getProgramCode($program_id) {
+		$this->db->where('program_id', $program_id);
+		return $this->db->get('program')->row()->program_code;
+	}
 }

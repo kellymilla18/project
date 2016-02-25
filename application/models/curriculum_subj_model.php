@@ -7,4 +7,8 @@ class Curriculum_Subj_Model extends CI_Model {
 		$this->db->where('curr_sem', $semester);
 		return $this->db->get('curr_subjects');
 	}
+
+	public function addSubject($data) {
+		$this->db->insert('curr_subjects', $data);
+	}
 }
