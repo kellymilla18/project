@@ -2,6 +2,8 @@
     <center>
         <h2> <?php echo "$program_name ($program_code)"; ?> </h2>
         <small> Curriculum Year: <?php echo $curriculum_year; ?> </small>
+        <button onclick="location.href='<?php echo(base_url('index.php/curriculum/pdf_view/'."$program_code/$curriculum_year")); ?>'"class="btn btn-default"> <i class="glyphicon glyphicon-file"> </i></button>
+        <button onclick="location.href='<?php echo(base_url('index.php/curriculum/pdf_view/'."$program_code/$curriculum_year")); ?>'"class="btn btn-default"> <i class="glyphicon glyphicon-file"> </i></button>
     </center>
 </div>
 

@@ -3,9 +3,10 @@
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Course extends CI_Controller {
+	
 	public function list_of_courses(){
 		$courses = $this->course_model->getAllCourses();
-
+		
 		$this->load->view('header');
 		$this->load->view('course_list');
 		$this->load->view('footer');
